@@ -20,14 +20,25 @@ Certainly! Here are a few examples of natural disaster-related tweets :
 
     "💨 Strong winds and heavy rainfall are expected in the region due to an approaching cyclone. Secure loose objects, stay indoors, and avoid unnecessary travel. Safety should be the top priority. #Cyclone #WeatherUpdate"
 
- for solving this we used Bert-base-cased and bert-base-uncased with fine tuning the model and pretrained model from TFBertForSequenceClassification.
- trained the model separate-separate datasets as train and test
+ for solving this we used Bert-base-cased and bert-base-uncased with fine-tune BERT for classification of disaster tweets PyTorch-based transformer models and Tensorflow-based models. the model and pretrained model from TFBertForSequenceClassification.
+
+ We prepared a simple train.py training script,the following code snippets available in @code_train.py 
+ __________________________________________________________________________________________________________________________________________________________________________________________________
+ We'll use the following command to launch training:
+
+                                             !tensorflow & pytorch scripts/@code_train.py \
+                                                   --fine_tune_model bert-base-uncased \
+                                                   --fine-tune_model bert-base-mutilingual-cased\
+                                                   --dataset_path train.csv \
+                                                   --lr 1e-3 \
+                                                   --per_device_train_batch_size 32  \
+                                                   --epochs 10
 
  Model: "tf_bert_for_sequence_classification"::
                                              
                                               Total params: 109,483,778 
 
-with fine tuning the model
+with fine-tune  BERT model
 
 
  Model: "tf_bert_for_sequence_classification"::
@@ -36,6 +47,18 @@ with fine tuning the model
                                             Total params: 177,855,747
 
 ________________________________________________________________________________________________________________________________________________________________________________________________________
+
+the training was completed and achieved results :
+  
+  
+                                          ***** train metrics *****
+   
+                                                       epoch                    =        10
+                                                       train_runtime            =    0:7:45
+                                                       train_samples.shuffle    =     1000
+                                                       train_samples_per_second =     85.00
+
+
 
 🛠 frameworks and tools used:
 
