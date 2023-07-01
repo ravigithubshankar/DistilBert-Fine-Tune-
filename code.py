@@ -49,6 +49,10 @@ model1=TFBertForSequenceClassification.from_pretrained("bert-base-cased")
 token=DistilBertTokenizer.from_pretrained("distilbert-base-uncased")
 model=DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased",num_labels=2)
 
+
+#We must convert our "Natural Language" to token IDs to train our model. This is done by a Tokenizer, 
+#which tokenizes the inputs (including converting the tokens to their corresponding IDs in the pre-trained vocabulary)
+
 train_tokens = tokenizer.batch_encode_plus(
     train_path['text'].tolist(), 
     #max_length=128,  
